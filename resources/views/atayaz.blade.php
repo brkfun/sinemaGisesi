@@ -19,7 +19,7 @@
     <div class ="tableouter"> 
     <form action="işlem.php" method="post">
     <div style="text-align:center"><p>
-            <a href="">
+            <a href="{{ route('loginPage') }}">
                 Müşteri Giriş
             </a>
             <input type="button" class="sub" id="müşteri" onClick="" value="müşteri giriş" />

@@ -21,6 +21,9 @@ Route::get('/atayaz', function () {
     return view('welcome');
 });
 
+Route::get('/login-page', function () {
+    return view('auth.login');
+})->name('loginPage');
 
 
 
