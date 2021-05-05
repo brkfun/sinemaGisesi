@@ -1,0 +1,48 @@
+#müşteri  {
+    background-color: lightcoral;
+}
+
+#personel{
+    background-color:  lightcoral;
+}
+
+#müşteri:hover{
+    background-color:  lightcoral;
+}
+
+#personel:hover{
+    background-color:  lightcoral;
+}
+
+.sub{
+    height: 25px;
+    width: 20%;
+    font-size: 15px;
+}
+
+
+#müşteri
+{
+    position: relative;
+    left: -500px;
+    top: 3cm;
+}
+#personel
+{
+    position: relative;
+    left: +450px;
+    top: 3cm;
+}
+
+#cikis
+{
+    position: relative ;
+    left: +48cm;
+    width: 2cm;
+}
+
+#musterifoto
+{
+    position: relative ;
+
+}
