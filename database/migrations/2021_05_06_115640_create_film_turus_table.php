@@ -15,6 +15,7 @@ class CreateFilmTurusTable extends Migration
     {
         Schema::create('film_turus', function (Blueprint $table) {
             $table->id();
+            $table->text('adi');
             $table->timestamps();
         });
     }

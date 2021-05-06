@@ -15,7 +15,13 @@ class CreateFilmsTable extends Migration
     {
         Schema::create('films', function (Blueprint $table) {
             $table->id();
-            $table->text('name');
+            $table->unsignedBigInteger('film_turu_id')->nullable();
+            $table->text('kod')->index('film_kodu');
+            $table->text('adi');
+            $table->text('yonetmen_adi')->nullable();
+            $table->text('yonetmen_soyadi')->nullable();
+            $table->text('film_suresi')->nullable();
+            $table->dateTime('vizyon_tarihi')->nullable();
             $table->timestamps();
         });
     }

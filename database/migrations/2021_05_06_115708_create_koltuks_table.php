@@ -15,6 +15,8 @@ class CreateKoltuksTable extends Migration
     {
         Schema::create('koltuks', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('salon_id');
+            $table->text('kod')->index('koltuk_kod');
             $table->timestamps();
         });
     }

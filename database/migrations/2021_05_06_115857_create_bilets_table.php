@@ -15,6 +15,9 @@ class CreateBiletsTable extends Migration
     {
         Schema::create('bilets', function (Blueprint $table) {
             $table->id();
+            $table->datetime('satis_tarihi');
+            $table->jsonb('musteri_bilgileri');
+            $table->unsignedBigInteger('seans_id');
             $table->timestamps();
         });
     }

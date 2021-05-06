@@ -14,11 +14,13 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
+        "orangehill/iseed": "^3.0",
         "tcg/voyager": "^1.4"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
+        "kitloong/laravel-migrations-generator": "^4.4",
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.2",
         "nunomaduro/collision": "^5.0",

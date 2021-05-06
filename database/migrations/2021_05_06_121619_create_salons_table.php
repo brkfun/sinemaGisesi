@@ -15,6 +15,7 @@ class CreateSalonsTable extends Migration
     {
         Schema::create('salons', function (Blueprint $table) {
             $table->id();
+            $table->text('adi')->nullable();
             $table->timestamps();
         });
     }
