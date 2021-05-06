@@ -21,7 +21,7 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app" style="height: 100vh; background-image: url('https://r.resimlink.com/5hKMF9R.png'); background-repeat: no-repeat;    background-size: cover;">
+    <div id="app" style="height: 100vh; background-image: url('https://tasarimcantasi.com/uploads/posts/2016-10/1477917698_yesilcamm.png'); background-repeat: no-repeat;    background-size: cover;">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">

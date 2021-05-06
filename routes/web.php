@@ -25,6 +25,16 @@ Route::get('/login-page', function () {
     return view('auth.login');
 })->name('loginPage');
 
+Route::get('/personel', function () {
+    return view('personel');
+})->name('personel');
+
+Route::get('/musteri', function () {
+    return view('musteri');
+})->name('musteri');
+
+
+
 
 
 
