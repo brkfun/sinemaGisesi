@@ -27,10 +27,12 @@ class DatabaseSeeder extends Seeder
         $this->call(KoltukSeeder::class);
         $this->call(FilmTuruSeeder::class);
         $this->call(FilmSeeder::class);
+        $this->call(SeansSeeder::class);
 
         // \App\Models\User::factory(10)->create();
         if (User::count() == 0) {
-            $role = Role::where('name', 'admin')->firstOrFail();
+            $role = Role::where('name', 'admin')
+                ->firstOrFail();
 
             User::create([
                 'name'           => 'Admin',
@@ -39,7 +41,6 @@ class DatabaseSeeder extends Seeder
                 'remember_token' => Str::random(60),
                 'role_id'        => $role->id,
             ]);
-            $this->call(TemplateTranslationsTableSeeder::class);
-    }
+        }
     }
 }
