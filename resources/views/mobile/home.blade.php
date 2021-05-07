@@ -1,6 +1,6 @@
 @extends('mobile.layouts.master')
 @section('content')
-    @include('mobile.partials.slider')
-    @include('mobile.partials.note')
-    @include('mobile.partials.list')
+    @component('mobile.partials.note',['title' => 'Filmler'])
+        @include('mobile.partials.slider',['films' => \App\Models\Film::all()])
+    @endcomponent
 @endsection

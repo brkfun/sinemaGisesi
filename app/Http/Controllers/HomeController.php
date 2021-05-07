@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Film;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -30,7 +31,10 @@ class HomeController extends Controller
     {
         return view('mobile.home');
     }
-    public function detail(){
-        return view('mobile.detail');
+
+    public function detail($filmId)
+    {
+        $film = Film::query()->findOrFail($filmId);
+        return view('mobile.detail',['film' => $film]);
     }
 }

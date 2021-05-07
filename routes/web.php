@@ -18,8 +18,10 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/mobile', [HomeController::class, 'mobile']);
-Route::get('/mobile/detail', [HomeController::class, 'detail']);
+Route::get('/mobile', [HomeController::class, 'mobile'])->name('mobile-home');
+Route::get('/mobile/buy', [HomeController::class, 'mobileBuy'])->name('mobile-buy');
+Route::get('/mobile/buy/{filmId}', [HomeController::class, 'mobileBuyFilm'])->name('mobile-buy-film');
+Route::get('/mobile/{filmId}', [HomeController::class, 'detail'])->name('mobile-detail');
 
 Route::get('/personel', function () {
     return view('personel');
