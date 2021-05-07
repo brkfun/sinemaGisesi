@@ -35,8 +35,8 @@ class SeansSeeder extends Seeder
             ->toPeriod($before, $after);
         $dateArray = [];
         foreach ($dates as $date) {
-            $seans = new Seans();
             foreach ($salons as $salon) {
+                $seans = new Seans();
                 $seans->kod = Str::random('8');
                 $seans->salon_id = $salon->id;
                 $seans->ucret = rand(20,30);

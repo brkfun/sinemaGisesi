@@ -1,6 +1,12 @@
 <?php
 
+use App\Http\Controllers\CinemaController;
 use App\Http\Controllers\HomeController;
+use App\Models\Bilet;
+use App\Models\Seans;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,22 +20,54 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [CinemaController::class, 'home']);
 
-Route::get('/mobile', [HomeController::class, 'mobile'])->name('mobile-home');
-Route::get('/mobile/buy', [HomeController::class, 'mobileBuy'])->name('mobile-buy');
-Route::get('/mobile/buy/{filmId}', [HomeController::class, 'mobileBuyFilm'])->name('mobile-buy-film');
-Route::get('/mobile/{filmId}', [HomeController::class, 'detail'])->name('mobile-detail');
+Route::post('/adim-1', function (Request $request) {#Saat seçimi
+  return CinemaController::stepper($request,true);
+})->name('bilet-al-adim-1');
+
+Route::post('/adim-2', function (Request $request) {#salon
+    return CinemaController::stepper($request,true,true);
+})->name('bilet-al-adim-2');
+
+Route::post('/adim-3', function (Request $request) {#koltuk
+    return CinemaController::stepper($request,true,true,true);
+})->name('bilet-al-adim-3');
+
+
+Route::post('/adim-4', function (Request $request) {#koltuk
+    return CinemaController::stepper($request,true,true,true, true);
+})->name('bilet-al-adim-4');
+
+
+Route::post('/satin-alindi', [CinemaController::class, 'purchase'])->name('satin-alma');
+
+Route::get('bilet-detayi/{biletNo}',[CinemaController::class,'ticketDetail'])->name('bilet-detayi');
+
+Route::get('/mobile', [CinemaController::class,
+    'mobile',
+])
+    ->name('mobile-home');
+Route::get('/mobile/buy', [
+    CinemaController::class,
+    'mobileBuy',
+])
+    ->name('mobile-buy');
+Route::get('/mobile/buy/{filmId}', [
+    CinemaController::class,
+    'mobileBuyFilm',
+])
+    ->name('mobile-buy-film');
+Route::get('/mobile/{filmId}', [
+    CinemaController::class,
+    'detail',
+])
+    ->name('mobile-detail');
 
 Route::get('/personel', function () {
     return view('personel');
-})->name('personel');
-
-
-
-
+})
+    ->name('personel');
 
 
 Route::group(['prefix' => 'admin'], function () {
@@ -38,6 +76,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 Auth::routes(['register' => false]);
 
-Route::get('/home', function (){
-    return \Illuminate\Support\Facades\Redirect::route('voyager.dashboard');
-})->name('home');
+Route::get('/home', function () {
+    return Redirect::route('voyager.dashboard');
+})
+    ->name('home');

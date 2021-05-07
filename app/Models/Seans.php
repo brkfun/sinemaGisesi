@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Seans extends Model
 {
     use HasFactory;
+    protected $dates = ['tarih_saat'];
 }

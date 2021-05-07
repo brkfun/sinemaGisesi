@@ -18,6 +18,7 @@ class CreateBiletsTable extends Migration
             $table->datetime('satis_tarihi');
             $table->jsonb('musteri_bilgileri');
             $table->unsignedBigInteger('seans_id');
+            $table->unsignedBigInteger('koltuk_id');
             $table->timestamps();
         });
     }
