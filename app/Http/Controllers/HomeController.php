@@ -25,4 +25,12 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function mobile()
+    {
+        return view('mobile.home');
+    }
+    public function detail(){
+        return view('mobile.detail');
+    }
 }
