@@ -33,5 +33,12 @@ class PermissionsTableSeeder extends Seeder
         Permission::generateFor('users');
 
         Permission::generateFor('settings');
+
+        Permission::generateFor('bilets');
+        Permission::generateFor('koltuks');
+        Permission::generateFor('film_turus');
+        Permission::generateFor('films');
+        Permission::generateFor('salons');
+        Permission::generateFor('seans');
     }
 }

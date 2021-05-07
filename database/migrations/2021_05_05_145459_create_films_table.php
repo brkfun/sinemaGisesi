@@ -20,7 +20,7 @@ class CreateFilmsTable extends Migration
             $table->text('adi');
             $table->text('yonetmen_adi')->nullable();
             $table->text('yonetmen_soyadi')->nullable();
-            $table->text('film_suresi')->nullable();
+            $table->text('suresi')->nullable();
             $table->dateTime('vizyon_tarihi')->nullable();
             $table->timestamps();
         });
