@@ -125,7 +125,7 @@ class TemplateDataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2021-05-06 23:08:45',
-                'updated_at' => '2021-05-07 00:27:17',
+                'updated_at' => '2021-05-07 02:04:40',
             ),
             6 => 
             array (
@@ -176,10 +176,10 @@ class TemplateDataTypesTableSeeder extends Seeder
                 'controller' => NULL,
                 'description' => NULL,
                 'generate_permissions' => 1,
-                'server_side' => 0,
+                'server_side' => 1,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2021-05-06 23:12:09',
-                'updated_at' => '2021-05-07 00:31:20',
+                'updated_at' => '2021-05-07 01:10:33',
             ),
         ));
         

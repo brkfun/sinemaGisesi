@@ -18,6 +18,7 @@ class CreateFilmsTable extends Migration
             $table->unsignedBigInteger('film_turu_id')->nullable();
             $table->text('kod')->index('film_kodu');
             $table->text('adi');
+            $table->text('resim')->nullable();
             $table->text('yonetmen_adi')->nullable();
             $table->text('yonetmen_soyadi')->nullable();
             $table->text('suresi')->nullable();

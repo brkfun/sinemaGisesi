@@ -105,6 +105,7 @@ class FilmSeeder extends Seeder
             foreach ($filmFull as $filmFields => $filmValues) {
                 $film->$filmFields = $filmValues;
             }
+            $film->resim = 'films/'.$filmFull['adi'].'.jpg';
             $film->save();
         }
     }

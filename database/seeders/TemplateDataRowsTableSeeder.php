@@ -1011,6 +1011,22 @@ class TemplateDataRowsTableSeeder extends Seeder
                 'details' => '{"model":"App\\\\Models\\\\Salon","table":"salons","type":"belongsTo","column":"salon_id","key":"id","label":"adi","pivot_table":"bilets","pivot":"0","taggable":"0"}',
                 'order' => 6,
             ),
+            62 => 
+            array (
+                'id' => 63,
+                'data_type_id' => 6,
+                'field' => 'resim',
+                'type' => 'image',
+                'display_name' => 'Resim',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{}',
+                'order' => 5,
+            ),
         ));
         
         

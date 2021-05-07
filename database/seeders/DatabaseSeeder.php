@@ -41,6 +41,14 @@ class DatabaseSeeder extends Seeder
                 'remember_token' => Str::random(60),
                 'role_id'        => $role->id,
             ]);
+
+            User::create([
+                'name'           => 'Personel',
+                'email'          => 'personel@personel.com',
+                'password'       => bcrypt('personel'),
+                'remember_token' => Str::random(60),
+                'role_id'        => $role->id,
+            ]);
         }
     }
 }
