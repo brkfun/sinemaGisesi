@@ -64,17 +64,18 @@ class CinemaController extends Controller
         $bilet->seans_id = $seans->id;
         $bilet->koltuk_id = $request->koltuk;
         $bilet->satis_tarihi = now();
-        $bilet->musteri_bilgileri = ['adi' => $request->adi, 'tel' => $request->tel];
+        $bilet->musteri_bilgileri = json_encode(['adi' => $request->adi, 'tel' => $request->tel]);
         $bilet->save();
         return Redirect::route('bilet-detayi',['biletNo' => $seans->id .'-'.$request->koltuk]);
     }
 
-    public function mobileBuyFilm(Request $request,$filmId)
+    public function mobileBuyFilm(Request $request)
     {
-        return Self::stepper($request,false,false,false,false,'mobile.buy', $filmId);
+        return Self::stepper($request,false,false,false,false,'mobile.buy', route('bilet-al-adim-1'));
     }
 
-    public static function stepper(Request $request, $section2 = null, $section3 = null, $section4 = null, $section5 = null, $viewName = 'bilet_adim',$filmId = null)
+    public static function stepper(Request $request, $section2 = null, $section3 = null, $section4 = null, $section5 = null, $viewName = 'bilet_adim',
+        $route = null)
     {
         $tarih  = null;
         $saat   = null;
@@ -146,7 +147,9 @@ class CinemaController extends Controller
             $koltuks = Koltuk::query()->findMany($available_tickets);
         }
         $saleReady = null;
-        $route = route('bilet-al-adim-2');
+        if(!$route){
+            $route = route('bilet-al-adim-2');
+        }
         if($saat  && $saat !== 'null'){
             $route = route('bilet-al-adim-3');
         }
@@ -156,26 +159,6 @@ class CinemaController extends Controller
         if($koltuk && $koltuk !== 'null'){
             $route = route('satin-alma');
             $saleReady = true;
-        }
-
-        if($filmId !== null){
-            return view($viewName, [
-                'tarihVal'  => $tarih,
-                'saatVal'   => $saat,
-                'filmVal'   => $film,
-                'salonVal'  => $salon,
-                'koltukVal' => $koltuk,
-                'section2'  => $section2,
-                'section3'  => $section3,
-                'section4'  => $section4,
-                'section5'  => $section5,
-                'saleReady'  => $saleReady,
-                'times' => isset($times) ? $times : [],
-                'salons' => isset($salons) ? $salons : [],
-                'koltuks' => isset($koltuks) ? $koltuks : [],
-                'route' => $route,
-                'film' => Film::query()->find($filmId),
-            ]);
         }
 
         return view($viewName, [

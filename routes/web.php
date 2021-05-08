@@ -48,12 +48,14 @@ Route::get('/mobile', [CinemaController::class,
     'mobile',
 ])
     ->name('mobile-home');
+
 Route::get('/mobile/buy', [
     CinemaController::class,
     'mobileBuy',
 ])
     ->name('mobile-buy');
-Route::get('/mobile/buy/{filmId}', [
+
+Route::get('/mobile/buy', [
     CinemaController::class,
     'mobileBuyFilm',
 ])

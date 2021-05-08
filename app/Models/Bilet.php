@@ -8,5 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class Bilet extends Model
 {
     use HasFactory;
-    protected $casts = ['musteri_bilgileri' => 'array' ];
 }
