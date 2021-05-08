@@ -15,7 +15,7 @@ class CreateSeansTable extends Migration
     {
         Schema::create('seans', function (Blueprint $table) {
             $table->id();
-            $table->text('kod')->index('film_kodu');
+            $table->text('kod');
             $table->dateTime('tarih_saat');
             $table->unsignedBigInteger('ucret')->nullable();
             $table->unsignedBigInteger('film_id');
