@@ -5,7 +5,7 @@
                 @foreach($films as $film)
                     <div class="splide__slide ps-3">
                         <a href="{{ route('mobile-detail',['filmId' => $film->id]) }}">
-                            <div data-card-height="220" class="card  shadow-xl rounded-m" style="background-image: url('/{{ $film->resim }}')">
+                            <div data-card-height="220" class="card  shadow-xl rounded-m" style="background-image: url('/storage/{{ $film->resim }}')">
                                 <div class="card-bottom text-center">
                                     <h4 class="color-white font-800 mb-3">{{ $film->adi }}</h4>
                                 </div>

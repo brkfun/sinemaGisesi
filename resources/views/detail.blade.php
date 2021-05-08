@@ -4,7 +4,7 @@
             <div class="card-header">Bilet Detayınız</div>
 
             <div class="card-body">
-                <img src="/{{ $film->resim }}" style="max-width: 150px" />
+                <img src="/storage/{{ $film->resim }}" style="max-width: 150px" />
                 <div>
                     {{ $film->adi }}
                 </div>
