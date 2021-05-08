@@ -6,8 +6,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
     <title>Central Cinema</title>
-    <link rel="stylesheet" href="{{asset('mobile/css/bootstrap.css')}}">
-    <link rel="stylesheet" href="{{asset('mobile/fonts/css/fontawesome-all.min.css')}}">
+    <link rel="stylesheet" href="{{asset('mobil/css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{asset('mobil/fonts/css/fontawesome-all.min.css')}}">
 
 
 </head>
@@ -19,8 +19,8 @@
     @include('mobile.layouts.footer')
     </div>
 </main>
-<script type="text/javascript" src="{{asset('mobile/js/bootstrap.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('mobile/js/custom.js')}}"></script>
+<script type="text/javascript" src="{{asset('mobil/js/bootstrap.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('mobil/js/custom.js')}}"></script>
 </body>
 
 </html>
