@@ -16,7 +16,7 @@ class CreateFilmsTable extends Migration
         Schema::create('films', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('film_turu_id')->nullable();
-            $table->text('kod')->index('film_kodu');
+            $table->text('kod');
             $table->text('adi');
             $table->text('resim')->nullable();
             $table->text('yonetmen_adi')->nullable();
