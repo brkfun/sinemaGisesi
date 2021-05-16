@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
 
+        if (User::count() == 0) {
         $this->call(VoyagerDatabaseSeeder::class);
         $this->call(TemplateDataTypesTableSeeder::class);
         $this->call(TemplateDataRowsTableSeeder::class);
@@ -30,7 +31,6 @@ class DatabaseSeeder extends Seeder
         $this->call(SeansSeeder::class);
 
         // \App\Models\User::factory(10)->create();
-        if (User::count() == 0) {
             $role = Role::where('name', 'admin')
                 ->firstOrFail();
 

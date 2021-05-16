@@ -107,11 +107,12 @@ class CinemaController extends Controller
         if ($section2 === true) {
             $date  = Carbon::createFromFormat('d/m/Y', str_replace('.', '/', $tarih))
                 ->startOfDay();
-            $seans = Seans::query()
+            $seans =
+                Seans::query()
                 ->where('tarih_saat', '>', $date)
-                ->where('tarih_saat', '<', $date->toImmutable()
-                    ->endOfDay())
-                ->where('film_id', $film)->get();
+                ->where('tarih_saat', '<', $date->toImmutable()->endOfDay())
+                ->where('film_id', $film)
+                ->get();
             $times = [];
             $seans->each(function ($s) use(&$times){
                 $times[] = Carbon::createFromTimestamp($s->tarih_saat->timestamp)->format('H:i');
