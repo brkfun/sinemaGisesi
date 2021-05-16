@@ -55,8 +55,8 @@
                             @endif
                         </select>
                     </div>
-                    <div class="row">
-                        <div class="form-group section-4 {{ $section4 ? '' : 'd-none' }} col-6">
+                    <div class="row {{ $section4 ? '' : 'd-none' }}">
+                        <div class="form-group section-4 col-6">
                             <label for="koltuk">Koltuk Seçiniz</label>
                             <select name="koltuk" id="koltuk" class="form-control form-control-lg" {{ $koltukVal && $koltukVal !== 'null' ? 'disabled' : '' }}>
                                 <option selected value="null"> Koltuk Seçiniz</option>
