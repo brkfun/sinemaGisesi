@@ -55,16 +55,21 @@
                             @endif
                         </select>
                     </div>
-                    <div class="form-group section-4 {{ $section4 ? '' : 'd-none' }}">
-                        <label for="koltuk">Koltuk Seçiniz</label>
-                        <select name="koltuk" id="koltuk" class="form-control form-control-lg" {{ $koltukVal && $koltukVal !== 'null' ? 'disabled' : '' }}>
-                            <option selected value="null"> Koltuk Seçiniz</option>
-                            @if(isset($koltuks))
-                                @foreach($koltuks as $koltuk)
-                                    <option {{ $koltukVal && $koltukVal==$koltuk->id ? 'selected' : '' }} value="{{ $koltuk->id }}"> {{ $koltuk->kod }}</option>
-                                @endforeach
-                            @endif
-                        </select>
+                    <div class="row">
+                        <div class="form-group section-4 {{ $section4 ? '' : 'd-none' }} col-6">
+                            <label for="koltuk">Koltuk Seçiniz</label>
+                            <select name="koltuk" id="koltuk" class="form-control form-control-lg" {{ $koltukVal && $koltukVal !== 'null' ? 'disabled' : '' }}>
+                                <option selected value="null"> Koltuk Seçiniz</option>
+                                @if(isset($koltuks))
+                                    @foreach($koltuks as $koltuk)
+                                        <option {{ $koltukVal && $koltukVal==$koltuk->id ? 'selected' : '' }} value="{{ $koltuk->id }}"> {{ $koltuk->kod }}</option>
+                                    @endforeach
+                                @endif
+                            </select>
+                        </div>
+                        <div class="col-6">
+                            <img src="/koltuk-duzeni.jpg" style="max-width:100%;">
+                        </div>
                     </div>
                     @if($saleReady)
                         <div class="form-group">
