@@ -1,7 +1,3 @@
-Projeyi böyle yazdık
-Yooooo Boyle yazdik
-# md
+# sinema gişesi
 
-## dd
-
-### ddd
+müşterilerin online bilet almasını  ve personellerin giriş yapıp değişiklik yapmasını sağlayan proje
